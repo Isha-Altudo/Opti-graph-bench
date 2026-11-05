@@ -16,10 +16,7 @@ export const SIMPLE_QUERY = `
 `;
 
 export const COMPLEX_QUERY = `
-query getHeaderData(
-  $domain: String
-  $locale: [Locales!]
-) {
+query getHeaderData($domain: String, $locale: [Locales!]) {
   appLayout: LayoutSettingsBlock(
     where: {
       _or: [
@@ -49,21 +46,56 @@ query getHeaderData(
       }
 
       mainMenu {
-        _metadata {
-          key
-          displayName
-          types
-        }
+        ...IContentData
+        ...MegaMenuGroupBlockData
       }
 
       serviceButtons {
-        _metadata {
-          key
-          displayName
-          types
-        }
+        ...IContentData
       }
     }
+  }
+}
+
+fragment IContentData on _IContent {
+  _metadata {
+    key
+    displayName
+    types
+    url {
+      default
+    }
+  }
+}
+
+fragment LinkItemData on Link {
+  title
+  text
+  target
+  url {
+    default
+    base
+    hierarchical
+  }
+}
+
+fragment MenuNavigationBlockData on MenuNavigationBlock {
+  MenuNavigationHeading
+  NavigationLinks {
+    ...LinkItemData
+  }
+}
+
+fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {
+  MenuMenuHeading
+  MegaMenuUrl {
+    default
+    base
+    hierarchical
+  }
+  MegaMenuContentArea {
+    ...IContentData
+    ...MenuNavigationBlockData
   }
 }
 `;

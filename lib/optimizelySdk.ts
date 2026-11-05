@@ -28,6 +28,7 @@ export async function sdkFetch(
     query,
     variables,
     undefined,
+    false
   );
 
   return {

@@ -1,0 +1,104 @@
+{
+  "base": "http://localhost:3000",
+  "runs": 40,
+  "warmup": 3,
+  "rounds": 3,
+  "results": [
+    {
+      "path": "direct",
+      "query": "simple",
+      "expectedRuns": 120,
+      "successfulRuns": 120,
+      "failedRuns": 0,
+      "bytes": 194,
+      "bytesConsistent": true,
+      "upstreamMs": {
+        "min": 286.2121000000043,
+        "median": 322.59169999998994,
+        "p95": 448.59679999999935,
+        "max": 661.2368999999599,
+        "mean": 341.653972500001
+      },
+      "totalMs": {
+        "min": 288.34670000000006,
+        "median": 325.6885000000002,
+        "p95": 451.52620000000024,
+        "max": 664.3557999999975,
+        "mean": 344.7982200000001
+      },
+      "errors": []
+    },
+    {
+      "path": "sdk",
+      "query": "simple",
+      "expectedRuns": 120,
+      "successfulRuns": 120,
+      "failedRuns": 0,
+      "bytes": 194,
+      "bytesConsistent": true,
+      "upstreamMs": {
+        "min": 285.76089999999385,
+        "median": 324.76170000003185,
+        "p95": 412.14809999999125,
+        "max": 627.8575999999885,
+        "mean": 339.3364508333325
+      },
+      "totalMs": {
+        "min": 288.83989999999903,
+        "median": 328.2829000000056,
+        "p95": 415.97030000000086,
+        "max": 631.1446999999971,
+        "mean": 342.4543691666661
+      },
+      "errors": []
+    },
+    {
+      "path": "direct",
+      "query": "complex",
+      "expectedRuns": 120,
+      "successfulRuns": 120,
+      "failedRuns": 0,
+      "bytes": 7254,
+      "bytesConsistent": true,
+      "upstreamMs": {
+        "min": 291.2800999999745,
+        "median": 331.75209999998333,
+        "p95": 410.23159999999916,
+        "max": 518.5682999999844,
+        "mean": 342.17422166666705
+      },
+      "totalMs": {
+        "min": 294.5161999999982,
+        "median": 333.9527999999991,
+        "p95": 414.01600000000326,
+        "max": 522.3504000000248,
+        "mean": 345.24717249999907
+      },
+      "errors": []
+    },
+    {
+      "path": "sdk",
+      "query": "complex",
+      "expectedRuns": 120,
+      "successfulRuns": 120,
+      "failedRuns": 0,
+      "bytes": 7254,
+      "bytesConsistent": true,
+      "upstreamMs": {
+        "min": 289.11129999998957,
+        "median": 334.97669999999925,
+        "p95": 438.37709999998333,
+        "max": 833.3201999999583,
+        "mean": 347.71047749999997
+      },
+      "totalMs": {
+        "min": 291.26639999999315,
+        "median": 337.77780000001076,
+        "p95": 440.0989000000118,
+        "max": 837.080099999992,
+        "mean": 350.76497333333293
+      },
+      "errors": []
+    }
+  ]
+}

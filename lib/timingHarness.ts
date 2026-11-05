@@ -26,7 +26,7 @@ export async function runHarness(
   const start = performance.now();
 
   try {
-    const { bytes, data } = await fetcher(
+    const { bytes } = await fetcher(
       config.query,
       config.variables,
     );
@@ -37,8 +37,7 @@ export async function runHarness(
       path,
       query: name,
       ms,
-      bytes,
-      data,
+      bytes
     });
   } catch (e) {
     return NextResponse.json(
